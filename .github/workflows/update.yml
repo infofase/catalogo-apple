@@ -1,0 +1,40 @@
+name: Actualizar Catálogo Apple
+
+on:
+  schedule:
+    - cron: '0 */2 * * *'
+    - cron: '30 1,3,5,7,9,11,13,15,17,19,21,23 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: |
+          pip install requests pandas openpyxl Pillow numpy
+
+      - name: Ejecutar actualización
+        env:
+          SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
+        run: python update_catalog.py
+
+      - name: Commit y push si hay cambios
+        run: |
+          git config user.name  "Catálogo Bot"
+          git config user.email "bot@infofase.com"
+          git add index.html catalog_state.json
+          git diff --staged --quiet || git commit -m "Auto-update catálogo $(date -u '+%Y-%m-%d %H:%M UTC')"
+          git push
