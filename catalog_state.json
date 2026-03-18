@@ -1,6 +1,6 @@
 {
-  "last_change": "2026-03-18T13:00:38.271733+00:00",
-  "last_run": "2026-03-18T13:00:38.271733+00:00",
+  "last_change": "2026-03-18T14:00:42.768897+00:00",
+  "last_run": "2026-03-18T14:00:42.768897+00:00",
   "product_ids": [
     "ma6a4zm/a",
     "ma7d4zm/a",
@@ -725,7 +725,7 @@
     "mdhg4y/a:1456.76:agotado",
     "mdhh4y/a:1028.09:stock",
     "mdhj4y/a:1242.43:stock",
-    "mdhk4y/a:1456.76:stock",
+    "mdhk4y/a:1456.76:agotado",
     "mdv94y/a:1285.28:agotado",
     "mdva4y/a:1499.61:agotado",
     "mdvc4y/a:1713.94:agotado",
@@ -840,7 +840,7 @@
     "mfym4ql/a:1373.0:stock",
     "mfyn4ql/a:1373.0:stock",
     "mfyp4ql/a:1373.0:stock",
-    "mfyq4ql/a:1604.22:agotado",
+    "mfyq4ql/a:1604.22:stock",
     "mfyt4ql/a:1604.22:stock",
     "mfyu4ql/a:1604.22:stock",
     "mfyv4ql/a:1833.07:agotado",
